@@ -30,11 +30,13 @@ GOOGLE_AI_API_KEY= gemini_api_key
 
 1. Clone the repository
 2. Install dependencies:
-   ```bash npm install
+   ```
+   bash npm install
    ```
 3. Set up environment variables
 4. Run the development server:
-   ```bash npm run dev
+   ```
+   bash npm run dev
    ```
 
 ## Usage

@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #8B5CF6;
+  --primary-hover: #7C3AED;
+  --secondary: #4ADE80;
+  --secondary-hover: #22C55E;
+  --accent: #FFCD29;
+  --accent-hover: #F59E0B;
+  --tertiary: #FB7185;
+  --tertiary-hover: #E11D48;
+  --background: #F8FAFC;
+  --foreground: #0F172A;
+  --border: #E2E8F0;
+  --card: #FFFFFF;
+  --text-primary: #1E293B;
+  --text-secondary: #64748B;
+  --text-light: #94A3B8;
+  --success: #22C55E;
+  --match-high: #22C55E;
+  --match-medium: #3B82F6;
+  --match-low: #8B5CF6;
+}
+
+@layer base {
+  html, body {
+    @apply min-h-screen overflow-x-hidden;
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: var(--background);
+    color: var(--text-primary);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.25rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply rounded-full px-6 py-3 font-medium transition-all duration-200 shadow-sm;
+  }
+  
+  .btn-primary {
+    background-color: var(--primary);
+    color: white;
+    @apply hover:bg-primary-hover hover:shadow-md transform hover:-translate-y-0.5;
+  }
+  
+  .btn-secondary {
+    background-color: var(--secondary);
+    color: white;
+    @apply hover:bg-secondary-hover hover:shadow-md transform hover:-translate-y-0.5;
+  }
+
+  .btn-accent {
+    background-color: var(--accent);
+    color: var(--foreground);
+    @apply hover:bg-accent-hover hover:shadow-md transform hover:-translate-y-0.5;
+  }
+  
+  .input {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all;
+  }
+  
+  .primary-button {
+    background-color: var(--primary);
+    color: white;
+    padding: 0.75rem 1.75rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.2s;
+    @apply shadow-sm hover:shadow-md transform hover:-translate-y-0.5;
+  }
+  
+  .primary-button:hover {
+    background-color: var(--primary-hover);
+  }
+  
+  .secondary-button {
+    background-color: var(--secondary);
+    color: white;
+    padding: 0.75rem 1.75rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.2s;
+    @apply shadow-sm hover:shadow-md transform hover:-translate-y-0.5;
+  }
+  
+  .secondary-button:hover {
+    background-color: var(--secondary-hover);
+  }
+  
+  .header {
+    background-color: var(--foreground);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @apply shadow-md;
+  }
+  
+  .card {
+    background-color: var(--card);
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  .match-indicator {
+    border-radius: 9999px;
+    padding: 0.25rem 0.75rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+  
+  .match-high {
+    background-color: rgba(34, 197, 94, 0.15);
+    color: var(--match-high);
+  }
+  
+  .match-medium {
+    background-color: rgba(59, 130, 246, 0.15);
+    color: var(--match-medium);
+  }
+  
+  .match-low {
+    background-color: rgba(139, 92, 246, 0.15);
+    color: var(--match-low);
+  }
+
+  .gradient-text {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, var(--primary), var(--tertiary));
+  }
+
+  .gradient-bg {
+    background-image: linear-gradient(to right, var(--primary), var(--tertiary));
+  }
+
+  .animated-bg {
+    background: linear-gradient(-45deg, var(--primary), var(--tertiary), var(--secondary), var(--accent));
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .highlight {
+    position: relative;
+    z-index: 1;
+  }
+
+  .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 30%;
+    width: 100%;
+    background-color: var(--accent);
+    z-index: -1;
+    opacity: 0.4;
+  }
+}

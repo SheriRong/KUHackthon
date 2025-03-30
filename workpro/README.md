@@ -6,7 +6,7 @@ A modern web application that allows job seekers to upload their resumes to IPFS
 
 - Resume upload to IPFS via Pinata
 - AI-powered job matching using Gemini
-- Modern, responsive UI with Tailwind CSS
+- responsive UI with Tailwind CSS
 - Decentralized storage for resumes
 - Job search and matching functionality
 
@@ -21,22 +21,20 @@ A modern web application that allows job seekers to upload their resumes to IPFS
 Create a `.env.local` file in the root directory with the following variables:
 
 ```env
-NEXT_PUBLIC_PINATA_API_KEY=your_pinata_api_key
-NEXT_PUBLIC_PINATA_API_SECRET=your_pinata_api_secret
-GOOGLE_AI_API_KEY=your_gemini_api_key
+NEXT_PUBLIC_PINATA_API_KEY= pinata_api_key
+NEXT_PUBLIC_PINATA_API_SECRET= pinata_api_secret
+GOOGLE_AI_API_KEY= gemini_api_key
 ```
 
 ## Installation
 
 1. Clone the repository
 2. Install dependencies:
-   ```bash
-   npm install
+   ```bash npm install
    ```
 3. Set up environment variables
 4. Run the development server:
-   ```bash
-   npm run dev
+   ```bash npm run dev
    ```
 
 ## Usage
